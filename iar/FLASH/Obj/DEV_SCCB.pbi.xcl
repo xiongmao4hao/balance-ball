@@ -2,37 +2,37 @@
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\app
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\app
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\CPU
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\CPU
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\common
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\common
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\LPLD
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\LPLD
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\LPLD\HW
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\LPLD\HW
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\LPLD\DEV
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\LPLD\DEV
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\LPLD\FUNC
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\LPLD\FUNC
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\uCOS-II\Ports
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\uCOS-II\Ports
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\uCOS-II\Source
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\uCOS-II\Source
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\FatFs
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\FatFs
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\FatFs\option
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\FatFs\option
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\USB\common
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\USB\common
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\USB\driver
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\USB\driver
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\USB\descriptor
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\USB\descriptor
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\..\..\lib\USB\class
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\..\..\lib\USB\class
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\iar\..\my
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\iar\..\my
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4\arm\CMSIS\Include
 -I
@@ -40,7 +40,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4\arm\inc\c
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\app
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\app
 -I
 C:\Users\shize\Desktop\电设\bloodc\lib\CPU
 -I
@@ -70,7 +70,7 @@ C:\Users\shize\Desktop\电设\bloodc\lib\USB\descriptor
 -I
 C:\Users\shize\Desktop\电设\bloodc\lib\USB\class
 -I
-C:\Users\shize\Desktop\电设\bloodc\project\ball - 副本\my
+C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4\arm\CMSIS\Include
 -DLPLD_K60=1

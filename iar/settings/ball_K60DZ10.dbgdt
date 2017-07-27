@@ -62,7 +62,7 @@
           
         <item>100</item><item>150</item><item>100</item><item>175</item></col-widths>
       </WATCH_1>
-    <StaticWatch><expressions><item>angle2</item><item>angle</item><item>A2</item><item>A</item><item>F</item><item>F2</item><item>adress_err[0]</item><item>adress_err2[0]</item><item>x</item><item>y</item><item>adress_err</item><item>adress_err2</item><item>xf</item><item>yf</item><item>b</item><item>x_</item><item>y_</item><item></item></expressions><col-names><item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names><col-widths><item>143</item><item>150</item><item>100</item><item>237</item></col-widths></StaticWatch><Find-All-References><ColumnWidth0>496</ColumnWidth0><ColumnWidth1>70</ColumnWidth1><ColumnWidth2>850</ColumnWidth2></Find-All-References></Static>
+    <StaticWatch><expressions><item>angle2</item><item>angle</item><item>A2</item><item>A</item><item>F</item><item>F2</item><item>adress_err[0]</item><item>adress_err2[0]</item><item>x</item><item>y</item><item>adress_err</item><item>adress_err2</item><item>xf</item><item>yf</item><item>b</item><item>x_</item><item>y_</item><item/></expressions><col-names><item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names><col-widths><item>143</item><item>150</item><item>100</item><item>237</item></col-widths></StaticWatch><Find-All-References><ColumnWidth0>496</ColumnWidth0><ColumnWidth1>70</ColumnWidth1><ColumnWidth2>850</ColumnWidth2></Find-All-References></Static>
     <Windows>
       
       
