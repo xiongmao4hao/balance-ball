@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.60.2.11341/W32 for ARM       27/Jul/2017  11:16:35
+# IAR ANSI C/C++ Compiler V7.60.2.11341/W32 for ARM       27/Jul/2017  17:09:38
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -81,11 +81,7 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
      19          
 
    \                                 In section .bss, align 1
-     20          char KO,KI;
-   \                     KO:
-   \   00000000                      DS8 1
-
-   \                                 In section .bss, align 1
+     20          char KI;
    \                     KI:
    \   00000000                      DS8 1
      21          //float  KI1;
@@ -228,225 +224,225 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
      58                renew();
    \   00000002   0x.... 0x....      BL       renew
      59                if(0<F2<10&&angle2>0)
-   \   00000006   0x.... 0x....      LDR.W    R0,??DataTable1
-   \   0000000A   0x6800             LDR      R0,[R0, #+0]
-   \   0000000C   0x2100             MOVS     R1,#+0
-   \   0000000E   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   00000012   0xD201             BCS.N    ??control_0
-   \   00000014   0x2001             MOVS     R0,#+1
-   \   00000016   0xE000             B.N      ??control_1
+   \   00000006   0x....             LDR.N    R0,??DataTable1
+   \   00000008   0x6800             LDR      R0,[R0, #+0]
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   00000010   0xD201             BCS.N    ??control_0
+   \   00000012   0x2001             MOVS     R0,#+1
+   \   00000014   0xE000             B.N      ??control_1
    \                     ??control_0: (+1)
-   \   00000018   0x2000             MOVS     R0,#+0
+   \   00000016   0x2000             MOVS     R0,#+0
    \                     ??control_1: (+1)
-   \   0000001A   0x.... 0x....      LDR.W    R0,??DataTable1_1
-   \   0000001E   0x6800             LDR      R0,[R0, #+0]
-   \   00000020   0x2100             MOVS     R1,#+0
-   \   00000022   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   00000026   0xD215             BCS.N    ??control_2
+   \   00000018   0x....             LDR.N    R0,??DataTable1_1
+   \   0000001A   0x6800             LDR      R0,[R0, #+0]
+   \   0000001C   0x2100             MOVS     R1,#+0
+   \   0000001E   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   00000022   0xD211             BCS.N    ??control_2
      60                xf=2360-F2-angle2*0;
-   \   00000028   0x.... 0x....      LDR.W    R0,??DataTable1_2  ;; 0x45138000
-   \   0000002C   0x.... 0x....      LDR.W    R1,??DataTable1
-   \   00000030   0x6809             LDR      R1,[R1, #+0]
-   \   00000032   0x.... 0x....      BL       __aeabi_fsub
-   \   00000036   0x0004             MOVS     R4,R0
-   \   00000038   0x.... 0x....      LDR.W    R0,??DataTable1_1
-   \   0000003C   0x6801             LDR      R1,[R0, #+0]
-   \   0000003E   0x2000             MOVS     R0,#+0
-   \   00000040   0x.... 0x....      BL       __aeabi_fmul
-   \   00000044   0x0001             MOVS     R1,R0
-   \   00000046   0x0020             MOVS     R0,R4
-   \   00000048   0x.... 0x....      BL       __aeabi_fsub
-   \   0000004C   0x.... 0x....      LDR.W    R1,??DataTable1_3
-   \   00000050   0x6008             STR      R0,[R1, #+0]
-   \   00000052   0xE030             B.N      ??control_3
+   \   00000024   0x....             LDR.N    R0,??DataTable1_2  ;; 0x45138000
+   \   00000026   0x....             LDR.N    R1,??DataTable1
+   \   00000028   0x6809             LDR      R1,[R1, #+0]
+   \   0000002A   0x.... 0x....      BL       __aeabi_fsub
+   \   0000002E   0x0004             MOVS     R4,R0
+   \   00000030   0x....             LDR.N    R0,??DataTable1_1
+   \   00000032   0x6801             LDR      R1,[R0, #+0]
+   \   00000034   0x2000             MOVS     R0,#+0
+   \   00000036   0x.... 0x....      BL       __aeabi_fmul
+   \   0000003A   0x0001             MOVS     R1,R0
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0x.... 0x....      BL       __aeabi_fsub
+   \   00000042   0x....             LDR.N    R1,??DataTable1_3
+   \   00000044   0x6008             STR      R0,[R1, #+0]
+   \   00000046   0xE027             B.N      ??control_3
      61                else 
      62                  if(0>F2>-10&&angle2<0)
    \                     ??control_2: (+1)
-   \   00000054   0x.... 0x....      LDR.W    R0,??DataTable1
-   \   00000058   0x6800             LDR      R0,[R0, #+0]
-   \   0000005A   0x2100             MOVS     R1,#+0
-   \   0000005C   0x.... 0x....      BL       __aeabi_cfcmple
-   \   00000060   0xD201             BCS.N    ??control_4
-   \   00000062   0x2001             MOVS     R0,#+1
-   \   00000064   0xE000             B.N      ??control_5
+   \   00000048   0x....             LDR.N    R0,??DataTable1
+   \   0000004A   0x6800             LDR      R0,[R0, #+0]
+   \   0000004C   0x2100             MOVS     R1,#+0
+   \   0000004E   0x.... 0x....      BL       __aeabi_cfcmple
+   \   00000052   0xD201             BCS.N    ??control_4
+   \   00000054   0x2001             MOVS     R0,#+1
+   \   00000056   0xE000             B.N      ??control_5
    \                     ??control_4: (+1)
-   \   00000066   0x2000             MOVS     R0,#+0
+   \   00000058   0x2000             MOVS     R0,#+0
    \                     ??control_5: (+1)
-   \   00000068   0x.... 0x....      LDR.W    R0,??DataTable1_1
-   \   0000006C   0x6800             LDR      R0,[R0, #+0]
-   \   0000006E   0x2100             MOVS     R1,#+0
-   \   00000070   0x.... 0x....      BL       __aeabi_cfcmple
-   \   00000074   0xD215             BCS.N    ??control_6
+   \   0000005A   0x....             LDR.N    R0,??DataTable1_1
+   \   0000005C   0x6800             LDR      R0,[R0, #+0]
+   \   0000005E   0x2100             MOVS     R1,#+0
+   \   00000060   0x.... 0x....      BL       __aeabi_cfcmple
+   \   00000064   0xD211             BCS.N    ??control_6
      63                        xf=2360-F2-angle2*0;
-   \   00000076   0x.... 0x....      LDR.W    R0,??DataTable1_2  ;; 0x45138000
-   \   0000007A   0x.... 0x....      LDR.W    R1,??DataTable1
-   \   0000007E   0x6809             LDR      R1,[R1, #+0]
+   \   00000066   0x....             LDR.N    R0,??DataTable1_2  ;; 0x45138000
+   \   00000068   0x....             LDR.N    R1,??DataTable1
+   \   0000006A   0x6809             LDR      R1,[R1, #+0]
+   \   0000006C   0x.... 0x....      BL       __aeabi_fsub
+   \   00000070   0x0004             MOVS     R4,R0
+   \   00000072   0x....             LDR.N    R0,??DataTable1_1
+   \   00000074   0x6801             LDR      R1,[R0, #+0]
+   \   00000076   0x2000             MOVS     R0,#+0
+   \   00000078   0x.... 0x....      BL       __aeabi_fmul
+   \   0000007C   0x0001             MOVS     R1,R0
+   \   0000007E   0x0020             MOVS     R0,R4
    \   00000080   0x.... 0x....      BL       __aeabi_fsub
-   \   00000084   0x0004             MOVS     R4,R0
-   \   00000086   0x.... 0x....      LDR.W    R0,??DataTable1_1
-   \   0000008A   0x6801             LDR      R1,[R0, #+0]
-   \   0000008C   0x2000             MOVS     R0,#+0
-   \   0000008E   0x.... 0x....      BL       __aeabi_fmul
-   \   00000092   0x0001             MOVS     R1,R0
-   \   00000094   0x0020             MOVS     R0,R4
-   \   00000096   0x.... 0x....      BL       __aeabi_fsub
-   \   0000009A   0x.... 0x....      LDR.W    R1,??DataTable1_3
-   \   0000009E   0x6008             STR      R0,[R1, #+0]
-   \   000000A0   0xE009             B.N      ??control_3
+   \   00000084   0x....             LDR.N    R1,??DataTable1_3
+   \   00000086   0x6008             STR      R0,[R1, #+0]
+   \   00000088   0xE006             B.N      ??control_3
      64                  else
      65                        xf=2360-F2;
    \                     ??control_6: (+1)
-   \   000000A2   0x.... 0x....      LDR.W    R0,??DataTable1_2  ;; 0x45138000
-   \   000000A6   0x.... 0x....      LDR.W    R1,??DataTable1
-   \   000000AA   0x6809             LDR      R1,[R1, #+0]
-   \   000000AC   0x.... 0x....      BL       __aeabi_fsub
-   \   000000B0   0x.... 0x....      LDR.W    R1,??DataTable1_3
-   \   000000B4   0x6008             STR      R0,[R1, #+0]
-     66                if(xf>2660)
+   \   0000008A   0x....             LDR.N    R0,??DataTable1_2  ;; 0x45138000
+   \   0000008C   0x....             LDR.N    R1,??DataTable1
+   \   0000008E   0x6809             LDR      R1,[R1, #+0]
+   \   00000090   0x.... 0x....      BL       __aeabi_fsub
+   \   00000094   0x....             LDR.N    R1,??DataTable1_3
+   \   00000096   0x6008             STR      R0,[R1, #+0]
+     66                if(xf>3660)
    \                     ??control_3: (+1)
-   \   000000B6   0x.... 0x....      LDR.W    R0,??DataTable1_3
-   \   000000BA   0x6800             LDR      R0,[R0, #+0]
-   \   000000BC   0x.... 0x....      LDR.W    R1,??DataTable1_4  ;; 0x45264001
-   \   000000C0   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   000000C4   0xD804             BHI.N    ??control_7
-     67                  xf=2660;
-   \   000000C6   0x.... 0x....      LDR.W    R0,??DataTable1_5  ;; 0x45264000
-   \   000000CA   0x.... 0x....      LDR.W    R1,??DataTable1_3
-   \   000000CE   0x6008             STR      R0,[R1, #+0]
-     68                if(xf<2060)
+   \   00000098   0x....             LDR.N    R0,??DataTable1_3
+   \   0000009A   0x6800             LDR      R0,[R0, #+0]
+   \   0000009C   0x....             LDR.N    R1,??DataTable1_4  ;; 0x4564c001
+   \   0000009E   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   000000A2   0xD802             BHI.N    ??control_7
+     67                  xf=3660;
+   \   000000A4   0x....             LDR.N    R0,??DataTable1_5  ;; 0x4564c000
+   \   000000A6   0x....             LDR.N    R1,??DataTable1_3
+   \   000000A8   0x6008             STR      R0,[R1, #+0]
+     68                if(xf<1060)
    \                     ??control_7: (+1)
-   \   000000D0   0x.... 0x....      LDR.W    R0,??DataTable1_3
-   \   000000D4   0x6800             LDR      R0,[R0, #+0]
-   \   000000D6   0x.... 0x....      LDR.W    R1,??DataTable1_6  ;; 0x4500c000
-   \   000000DA   0x.... 0x....      BL       __aeabi_cfcmple
-   \   000000DE   0xD203             BCS.N    ??control_8
-     69                  xf=2060;
-   \   000000E0   0x.... 0x....      LDR.W    R0,??DataTable1_6  ;; 0x4500c000
-   \   000000E4   0x....             LDR.N    R1,??DataTable1_3
-   \   000000E6   0x6008             STR      R0,[R1, #+0]
+   \   000000AA   0x....             LDR.N    R0,??DataTable1_3
+   \   000000AC   0x6800             LDR      R0,[R0, #+0]
+   \   000000AE   0x....             LDR.N    R1,??DataTable1_6  ;; 0x44848000
+   \   000000B0   0x.... 0x....      BL       __aeabi_cfcmple
+   \   000000B4   0xD202             BCS.N    ??control_8
+     69                  xf=1060;
+   \   000000B6   0x....             LDR.N    R0,??DataTable1_6  ;; 0x44848000
+   \   000000B8   0x....             LDR.N    R1,??DataTable1_3
+   \   000000BA   0x6008             STR      R0,[R1, #+0]
      70                if(10>F>0&&angle<0)
    \                     ??control_8: (+1)
-   \   000000E8   0x.... 0x....      LDR.W    R0,??DataTable1_7
-   \   000000EC   0x6800             LDR      R0,[R0, #+0]
-   \   000000EE   0x.... 0x....      LDR.W    R1,??DataTable1_8  ;; 0x41200000
-   \   000000F2   0x.... 0x....      BL       __aeabi_cfcmple
-   \   000000F6   0xD201             BCS.N    ??control_9
-   \   000000F8   0x2001             MOVS     R0,#+1
-   \   000000FA   0xE000             B.N      ??control_10
+   \   000000BC   0x....             LDR.N    R0,??DataTable1_7
+   \   000000BE   0x6800             LDR      R0,[R0, #+0]
+   \   000000C0   0x....             LDR.N    R1,??DataTable1_8  ;; 0x41200000
+   \   000000C2   0x.... 0x....      BL       __aeabi_cfcmple
+   \   000000C6   0xD201             BCS.N    ??control_9
+   \   000000C8   0x2001             MOVS     R0,#+1
+   \   000000CA   0xE000             B.N      ??control_10
    \                     ??control_9: (+1)
-   \   000000FC   0x2000             MOVS     R0,#+0
+   \   000000CC   0x2000             MOVS     R0,#+0
    \                     ??control_10: (+1)
-   \   000000FE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
-   \   00000100   0x2800             CMP      R0,#+0
-   \   00000102   0xD017             BEQ.N    ??control_11
-   \   00000104   0x....             LDR.N    R0,??DataTable1_9
-   \   00000106   0x6800             LDR      R0,[R0, #+0]
-   \   00000108   0x2100             MOVS     R1,#+0
-   \   0000010A   0x.... 0x....      BL       __aeabi_cfcmple
-   \   0000010E   0xD211             BCS.N    ??control_11
+   \   000000CE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000D0   0x2800             CMP      R0,#+0
+   \   000000D2   0xD017             BEQ.N    ??control_11
+   \   000000D4   0x....             LDR.N    R0,??DataTable1_9
+   \   000000D6   0x6800             LDR      R0,[R0, #+0]
+   \   000000D8   0x2100             MOVS     R1,#+0
+   \   000000DA   0x.... 0x....      BL       __aeabi_cfcmple
+   \   000000DE   0xD211             BCS.N    ??control_11
      71               yf=2480+F-angle*0;
-   \   00000110   0x....             LDR.N    R0,??DataTable1_7
-   \   00000112   0x6801             LDR      R1,[R0, #+0]
-   \   00000114   0x....             LDR.N    R0,??DataTable1_10  ;; 0x451b0000
-   \   00000116   0x.... 0x....      BL       __aeabi_fadd
-   \   0000011A   0x0004             MOVS     R4,R0
-   \   0000011C   0x....             LDR.N    R0,??DataTable1_9
-   \   0000011E   0x6801             LDR      R1,[R0, #+0]
-   \   00000120   0x2000             MOVS     R0,#+0
-   \   00000122   0x.... 0x....      BL       __aeabi_fmul
-   \   00000126   0x0001             MOVS     R1,R0
-   \   00000128   0x0020             MOVS     R0,R4
-   \   0000012A   0x.... 0x....      BL       __aeabi_fsub
-   \   0000012E   0x....             LDR.N    R1,??DataTable1_11
-   \   00000130   0x6008             STR      R0,[R1, #+0]
-   \   00000132   0xE027             B.N      ??control_12
+   \   000000E0   0x....             LDR.N    R0,??DataTable1_7
+   \   000000E2   0x6801             LDR      R1,[R0, #+0]
+   \   000000E4   0x....             LDR.N    R0,??DataTable1_10  ;; 0x451b0000
+   \   000000E6   0x.... 0x....      BL       __aeabi_fadd
+   \   000000EA   0x0004             MOVS     R4,R0
+   \   000000EC   0x....             LDR.N    R0,??DataTable1_9
+   \   000000EE   0x6801             LDR      R1,[R0, #+0]
+   \   000000F0   0x2000             MOVS     R0,#+0
+   \   000000F2   0x.... 0x....      BL       __aeabi_fmul
+   \   000000F6   0x0001             MOVS     R1,R0
+   \   000000F8   0x0020             MOVS     R0,R4
+   \   000000FA   0x.... 0x....      BL       __aeabi_fsub
+   \   000000FE   0x....             LDR.N    R1,??DataTable1_11
+   \   00000100   0x6008             STR      R0,[R1, #+0]
+   \   00000102   0xE027             B.N      ??control_12
      72                else 
      73                  if(0>F>-10&&angle>0)
    \                     ??control_11: (+1)
-   \   00000134   0x....             LDR.N    R0,??DataTable1_7
-   \   00000136   0x6800             LDR      R0,[R0, #+0]
-   \   00000138   0x2100             MOVS     R1,#+0
-   \   0000013A   0x.... 0x....      BL       __aeabi_cfcmple
-   \   0000013E   0xD201             BCS.N    ??control_13
-   \   00000140   0x2001             MOVS     R0,#+1
-   \   00000142   0xE000             B.N      ??control_14
+   \   00000104   0x....             LDR.N    R0,??DataTable1_7
+   \   00000106   0x6800             LDR      R0,[R0, #+0]
+   \   00000108   0x2100             MOVS     R1,#+0
+   \   0000010A   0x.... 0x....      BL       __aeabi_cfcmple
+   \   0000010E   0xD201             BCS.N    ??control_13
+   \   00000110   0x2001             MOVS     R0,#+1
+   \   00000112   0xE000             B.N      ??control_14
    \                     ??control_13: (+1)
-   \   00000144   0x2000             MOVS     R0,#+0
+   \   00000114   0x2000             MOVS     R0,#+0
    \                     ??control_14: (+1)
-   \   00000146   0x....             LDR.N    R0,??DataTable1_9
-   \   00000148   0x6800             LDR      R0,[R0, #+0]
-   \   0000014A   0x2100             MOVS     R1,#+0
-   \   0000014C   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   00000150   0xD211             BCS.N    ??control_15
+   \   00000116   0x....             LDR.N    R0,??DataTable1_9
+   \   00000118   0x6800             LDR      R0,[R0, #+0]
+   \   0000011A   0x2100             MOVS     R1,#+0
+   \   0000011C   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   00000120   0xD211             BCS.N    ??control_15
      74                        yf=2480+F-angle*0; 
-   \   00000152   0x....             LDR.N    R0,??DataTable1_7
-   \   00000154   0x6801             LDR      R1,[R0, #+0]
-   \   00000156   0x....             LDR.N    R0,??DataTable1_10  ;; 0x451b0000
-   \   00000158   0x.... 0x....      BL       __aeabi_fadd
-   \   0000015C   0x0004             MOVS     R4,R0
-   \   0000015E   0x....             LDR.N    R0,??DataTable1_9
-   \   00000160   0x6801             LDR      R1,[R0, #+0]
-   \   00000162   0x2000             MOVS     R0,#+0
-   \   00000164   0x.... 0x....      BL       __aeabi_fmul
-   \   00000168   0x0001             MOVS     R1,R0
-   \   0000016A   0x0020             MOVS     R0,R4
-   \   0000016C   0x.... 0x....      BL       __aeabi_fsub
-   \   00000170   0x....             LDR.N    R1,??DataTable1_11
-   \   00000172   0x6008             STR      R0,[R1, #+0]
-   \   00000174   0xE006             B.N      ??control_12
+   \   00000122   0x....             LDR.N    R0,??DataTable1_7
+   \   00000124   0x6801             LDR      R1,[R0, #+0]
+   \   00000126   0x....             LDR.N    R0,??DataTable1_10  ;; 0x451b0000
+   \   00000128   0x.... 0x....      BL       __aeabi_fadd
+   \   0000012C   0x0004             MOVS     R4,R0
+   \   0000012E   0x....             LDR.N    R0,??DataTable1_9
+   \   00000130   0x6801             LDR      R1,[R0, #+0]
+   \   00000132   0x2000             MOVS     R0,#+0
+   \   00000134   0x.... 0x....      BL       __aeabi_fmul
+   \   00000138   0x0001             MOVS     R1,R0
+   \   0000013A   0x0020             MOVS     R0,R4
+   \   0000013C   0x.... 0x....      BL       __aeabi_fsub
+   \   00000140   0x....             LDR.N    R1,??DataTable1_11
+   \   00000142   0x6008             STR      R0,[R1, #+0]
+   \   00000144   0xE006             B.N      ??control_12
      75                  else
      76                        yf=2480+F;
    \                     ??control_15: (+1)
-   \   00000176   0x....             LDR.N    R0,??DataTable1_7
-   \   00000178   0x6801             LDR      R1,[R0, #+0]
-   \   0000017A   0x....             LDR.N    R0,??DataTable1_10  ;; 0x451b0000
-   \   0000017C   0x.... 0x....      BL       __aeabi_fadd
-   \   00000180   0x....             LDR.N    R1,??DataTable1_11
-   \   00000182   0x6008             STR      R0,[R1, #+0]
-     77                if(yf>2780)
+   \   00000146   0x....             LDR.N    R0,??DataTable1_7
+   \   00000148   0x6801             LDR      R1,[R0, #+0]
+   \   0000014A   0x....             LDR.N    R0,??DataTable1_10  ;; 0x451b0000
+   \   0000014C   0x.... 0x....      BL       __aeabi_fadd
+   \   00000150   0x....             LDR.N    R1,??DataTable1_11
+   \   00000152   0x6008             STR      R0,[R1, #+0]
+     77                if(yf>3780)
    \                     ??control_12: (+1)
-   \   00000184   0x....             LDR.N    R0,??DataTable1_11
-   \   00000186   0x6800             LDR      R0,[R0, #+0]
-   \   00000188   0x....             LDR.N    R1,??DataTable1_12  ;; 0x452dc001
-   \   0000018A   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   0000018E   0xD802             BHI.N    ??control_16
-     78                  yf=2780;
-   \   00000190   0x....             LDR.N    R0,??DataTable1_13  ;; 0x452dc000
-   \   00000192   0x....             LDR.N    R1,??DataTable1_11
-   \   00000194   0x6008             STR      R0,[R1, #+0]
-     79                if(yf<2160)
+   \   00000154   0x....             LDR.N    R0,??DataTable1_11
+   \   00000156   0x6800             LDR      R0,[R0, #+0]
+   \   00000158   0x....             LDR.N    R1,??DataTable1_12  ;; 0x456c4001
+   \   0000015A   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   0000015E   0xD802             BHI.N    ??control_16
+     78                  yf=3780;
+   \   00000160   0x....             LDR.N    R0,??DataTable1_13  ;; 0x456c4000
+   \   00000162   0x....             LDR.N    R1,??DataTable1_11
+   \   00000164   0x6008             STR      R0,[R1, #+0]
+     79                if(yf<1160)
    \                     ??control_16: (+1)
-   \   00000196   0x....             LDR.N    R0,??DataTable1_11
-   \   00000198   0x6800             LDR      R0,[R0, #+0]
-   \   0000019A   0x....             LDR.N    R1,??DataTable1_14  ;; 0x45070000
-   \   0000019C   0x.... 0x....      BL       __aeabi_cfcmple
-   \   000001A0   0xD202             BCS.N    ??control_17
-     80                  yf=2160;
-   \   000001A2   0x....             LDR.N    R0,??DataTable1_14  ;; 0x45070000
-   \   000001A4   0x....             LDR.N    R1,??DataTable1_11
-   \   000001A6   0x6008             STR      R0,[R1, #+0]
+   \   00000166   0x....             LDR.N    R0,??DataTable1_11
+   \   00000168   0x6800             LDR      R0,[R0, #+0]
+   \   0000016A   0x....             LDR.N    R1,??DataTable1_14  ;; 0x44910000
+   \   0000016C   0x.... 0x....      BL       __aeabi_cfcmple
+   \   00000170   0xD202             BCS.N    ??control_17
+     80                  yf=1160;
+   \   00000172   0x....             LDR.N    R0,??DataTable1_14  ;; 0x44910000
+   \   00000174   0x....             LDR.N    R1,??DataTable1_11
+   \   00000176   0x6008             STR      R0,[R1, #+0]
      81                LPLD_FTM_PWM_ChangeDuty(FTM0,FTM_Ch1,(uint16)(xf));
    \                     ??control_17: (+1)
-   \   000001A8   0x....             LDR.N    R0,??DataTable1_3
-   \   000001AA   0x6800             LDR      R0,[R0, #+0]
-   \   000001AC   0x.... 0x....      BL       __aeabi_f2iz
-   \   000001B0   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
-   \   000001B2   0x0002             MOVS     R2,R0
-   \   000001B4   0x2101             MOVS     R1,#+1
-   \   000001B6   0x....             LDR.N    R0,??DataTable1_15  ;; 0x40038000
-   \   000001B8   0x.... 0x....      BL       LPLD_FTM_PWM_ChangeDuty
+   \   00000178   0x....             LDR.N    R0,??DataTable1_3
+   \   0000017A   0x6800             LDR      R0,[R0, #+0]
+   \   0000017C   0x.... 0x....      BL       __aeabi_f2iz
+   \   00000180   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+   \   00000182   0x0002             MOVS     R2,R0
+   \   00000184   0x2101             MOVS     R1,#+1
+   \   00000186   0x....             LDR.N    R0,??DataTable1_15  ;; 0x40038000
+   \   00000188   0x.... 0x....      BL       LPLD_FTM_PWM_ChangeDuty
      82                LPLD_FTM_PWM_ChangeDuty(FTM1,FTM_Ch1,(uint16)(yf));
-   \   000001BC   0x....             LDR.N    R0,??DataTable1_11
-   \   000001BE   0x6800             LDR      R0,[R0, #+0]
-   \   000001C0   0x.... 0x....      BL       __aeabi_f2iz
-   \   000001C4   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
-   \   000001C6   0x0002             MOVS     R2,R0
-   \   000001C8   0x2101             MOVS     R1,#+1
-   \   000001CA   0x....             LDR.N    R0,??DataTable1_16  ;; 0x40039000
-   \   000001CC   0x.... 0x....      BL       LPLD_FTM_PWM_ChangeDuty
+   \   0000018C   0x....             LDR.N    R0,??DataTable1_11
+   \   0000018E   0x6800             LDR      R0,[R0, #+0]
+   \   00000190   0x.... 0x....      BL       __aeabi_f2iz
+   \   00000194   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+   \   00000196   0x0002             MOVS     R2,R0
+   \   00000198   0x2101             MOVS     R1,#+1
+   \   0000019A   0x....             LDR.N    R0,??DataTable1_16  ;; 0x40039000
+   \   0000019C   0x.... 0x....      BL       LPLD_FTM_PWM_ChangeDuty
      83          
      84          }
-   \   000001D0   0xBD10             POP      {R4,PC}          ;; return
+   \   000001A0   0xBD10             POP      {R4,PC}          ;; return
      85          
      86          
      87          
@@ -457,209 +453,113 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
      90          void renew()
      91          {
    \                     renew: (+1)
-   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000000   0xB510             PUSH     {R4,LR}
      92          
      93            //计算
-     94            if(y>35&&y<45)
-   \   00000002   0x....             LDR.N    R0,??DataTable1_17
-   \   00000004   0x6800             LDR      R0,[R0, #+0]
-   \   00000006   0x....             LDR.N    R1,??DataTable1_18  ;; 0x420c0001
-   \   00000008   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   0000000C   0xD832             BHI.N    ??renew_0
-   \   0000000E   0x....             LDR.N    R0,??DataTable1_17
-   \   00000010   0x6800             LDR      R0,[R0, #+0]
-   \   00000012   0x....             LDR.N    R1,??DataTable1_19  ;; 0x42340000
-   \   00000014   0x.... 0x....      BL       __aeabi_cfcmple
-   \   00000018   0xD22C             BCS.N    ??renew_0
-     95            {
-     96              A = (float)(P * adress_err[0] 
-     97                       + KD*D * (adress_err[0] -adress_err[1])
-     98                       +KI*I*adress_err_all);//
-   \   0000001A   0x....             LDR.N    R0,??DataTable1_20
-   \   0000001C   0x6801             LDR      R1,[R0, #+0]
-   \   0000001E   0x....             LDR.N    R0,??DataTable1_21
-   \   00000020   0x6800             LDR      R0,[R0, #+0]
-   \   00000022   0x.... 0x....      BL       __aeabi_fmul
-   \   00000026   0x0004             MOVS     R4,R0
-   \   00000028   0x....             LDR.N    R0,??DataTable1_22
-   \   0000002A   0x6801             LDR      R1,[R0, #+0]
-   \   0000002C   0x....             LDR.N    R0,??DataTable1_23
-   \   0000002E   0x6800             LDR      R0,[R0, #+0]
-   \   00000030   0x.... 0x....      BL       __aeabi_fmul
-   \   00000034   0x0005             MOVS     R5,R0
-   \   00000036   0x....             LDR.N    R0,??DataTable1_21
-   \   00000038   0x6800             LDR      R0,[R0, #+0]
-   \   0000003A   0x....             LDR.N    R1,??DataTable1_21
-   \   0000003C   0x6849             LDR      R1,[R1, #+4]
-   \   0000003E   0x.... 0x....      BL       __aeabi_fsub
-   \   00000042   0x0029             MOVS     R1,R5
-   \   00000044   0x.... 0x....      BL       __aeabi_fmul
-   \   00000048   0x0021             MOVS     R1,R4
-   \   0000004A   0x.... 0x....      BL       __aeabi_fadd
-   \   0000004E   0x0004             MOVS     R4,R0
-   \   00000050   0x....             LDR.N    R0,??DataTable1_24
-   \   00000052   0x7800             LDRB     R0,[R0, #+0]
-   \   00000054   0x.... 0x....      BL       __aeabi_ui2f
-   \   00000058   0x....             LDR.N    R1,??DataTable1_25
-   \   0000005A   0x6809             LDR      R1,[R1, #+0]
-   \   0000005C   0x.... 0x....      BL       __aeabi_fmul
-   \   00000060   0x....             LDR.N    R1,??DataTable1_26
-   \   00000062   0x6809             LDR      R1,[R1, #+0]
-   \   00000064   0x.... 0x....      BL       __aeabi_fmul
-   \   00000068   0x0021             MOVS     R1,R4
-   \   0000006A   0x.... 0x....      BL       __aeabi_fadd
-   \   0000006E   0x....             LDR.N    R1,??DataTable1_27
-   \   00000070   0x6008             STR      R0,[R1, #+0]
-   \   00000072   0xE025             B.N      ??renew_1
-     99            }
-    100            else
+     94          //  if(y>35&&y<45)
+     95          //  {
+     96          //    A = (float)(P * adress_err[0] 
+     97          //             + KD*D * (adress_err[0] -adress_err[1])
+     98          //             +KI*I*adress_err_all);//
+     99          //  }
+    100          //  else
     101              A=(float)(P * adress_err[0] 
-    102                       + D * (adress_err[0] -adress_err[1])
+    102                       + D * (adress_err[0] -adress_err[3])
     103                       +KI*I*adress_err_all);//
-   \                     ??renew_0: (+1)
-   \   00000074   0x....             LDR.N    R0,??DataTable1_20
-   \   00000076   0x6801             LDR      R1,[R0, #+0]
-   \   00000078   0x....             LDR.N    R0,??DataTable1_21
-   \   0000007A   0x6800             LDR      R0,[R0, #+0]
-   \   0000007C   0x.... 0x....      BL       __aeabi_fmul
-   \   00000080   0x0004             MOVS     R4,R0
-   \   00000082   0x....             LDR.N    R0,??DataTable1_21
-   \   00000084   0x6800             LDR      R0,[R0, #+0]
-   \   00000086   0x....             LDR.N    R1,??DataTable1_21
-   \   00000088   0x6849             LDR      R1,[R1, #+4]
-   \   0000008A   0x.... 0x....      BL       __aeabi_fsub
-   \   0000008E   0x....             LDR.N    R1,??DataTable1_23
-   \   00000090   0x6809             LDR      R1,[R1, #+0]
-   \   00000092   0x.... 0x....      BL       __aeabi_fmul
-   \   00000096   0x0021             MOVS     R1,R4
-   \   00000098   0x.... 0x....      BL       __aeabi_fadd
-   \   0000009C   0x0004             MOVS     R4,R0
-   \   0000009E   0x....             LDR.N    R0,??DataTable1_24
-   \   000000A0   0x7800             LDRB     R0,[R0, #+0]
-   \   000000A2   0x.... 0x....      BL       __aeabi_ui2f
-   \   000000A6   0x....             LDR.N    R1,??DataTable1_25
-   \   000000A8   0x6809             LDR      R1,[R1, #+0]
-   \   000000AA   0x.... 0x....      BL       __aeabi_fmul
-   \   000000AE   0x....             LDR.N    R1,??DataTable1_26
-   \   000000B0   0x6809             LDR      R1,[R1, #+0]
-   \   000000B2   0x.... 0x....      BL       __aeabi_fmul
-   \   000000B6   0x0021             MOVS     R1,R4
-   \   000000B8   0x.... 0x....      BL       __aeabi_fadd
-   \   000000BC   0x....             LDR.N    R1,??DataTable1_27
-   \   000000BE   0x6008             STR      R0,[R1, #+0]
+   \   00000002   0x....             LDR.N    R0,??DataTable1_17
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x....             LDR.N    R0,??DataTable1_18
+   \   00000008   0x6800             LDR      R0,[R0, #+0]
+   \   0000000A   0x.... 0x....      BL       __aeabi_fmul
+   \   0000000E   0x0004             MOVS     R4,R0
+   \   00000010   0x....             LDR.N    R0,??DataTable1_18
+   \   00000012   0x6800             LDR      R0,[R0, #+0]
+   \   00000014   0x....             LDR.N    R1,??DataTable1_18
+   \   00000016   0x68C9             LDR      R1,[R1, #+12]
+   \   00000018   0x.... 0x....      BL       __aeabi_fsub
+   \   0000001C   0x....             LDR.N    R1,??DataTable1_19
+   \   0000001E   0x6809             LDR      R1,[R1, #+0]
+   \   00000020   0x.... 0x....      BL       __aeabi_fmul
+   \   00000024   0x0021             MOVS     R1,R4
+   \   00000026   0x.... 0x....      BL       __aeabi_fadd
+   \   0000002A   0x0004             MOVS     R4,R0
+   \   0000002C   0x....             LDR.N    R0,??DataTable1_20
+   \   0000002E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000030   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000034   0x....             LDR.N    R1,??DataTable1_21
+   \   00000036   0x6809             LDR      R1,[R1, #+0]
+   \   00000038   0x.... 0x....      BL       __aeabi_fmul
+   \   0000003C   0x....             LDR.N    R1,??DataTable1_22
+   \   0000003E   0x6809             LDR      R1,[R1, #+0]
+   \   00000040   0x.... 0x....      BL       __aeabi_fmul
+   \   00000044   0x0021             MOVS     R1,R4
+   \   00000046   0x.... 0x....      BL       __aeabi_fadd
+   \   0000004A   0x....             LDR.N    R1,??DataTable1_23
+   \   0000004C   0x6008             STR      R0,[R1, #+0]
     104            F=A*4.222;
-   \                     ??renew_1: (+1)
-   \   000000C0   0x....             LDR.N    R0,??DataTable1_27
-   \   000000C2   0x6800             LDR      R0,[R0, #+0]
-   \   000000C4   0x.... 0x....      BL       __aeabi_f2d
-   \   000000C8   0x....             LDR.N    R2,??DataTable1_28  ;; 0xf7ced917
-   \   000000CA   0x....             LDR.N    R3,??DataTable1_29  ;; 0x4010e353
-   \   000000CC   0x.... 0x....      BL       __aeabi_dmul
-   \   000000D0   0x.... 0x....      BL       __aeabi_d2f
-   \   000000D4   0x....             LDR.N    R1,??DataTable1_7
-   \   000000D6   0x6008             STR      R0,[R1, #+0]
+   \   0000004E   0x....             LDR.N    R0,??DataTable1_23
+   \   00000050   0x6800             LDR      R0,[R0, #+0]
+   \   00000052   0x.... 0x....      BL       __aeabi_f2d
+   \   00000056   0x....             LDR.N    R2,??DataTable1_24  ;; 0xf7ced917
+   \   00000058   0x....             LDR.N    R3,??DataTable1_25  ;; 0x4010e353
+   \   0000005A   0x.... 0x....      BL       __aeabi_dmul
+   \   0000005E   0x.... 0x....      BL       __aeabi_d2f
+   \   00000062   0x....             LDR.N    R1,??DataTable1_7
+   \   00000064   0x6008             STR      R0,[R1, #+0]
     105            
     106          
     107          
     108            //计算
-    109            if(x>35&&x<45)
-   \   000000D8   0x....             LDR.N    R0,??DataTable1_30
-   \   000000DA   0x6800             LDR      R0,[R0, #+0]
-   \   000000DC   0x....             LDR.N    R1,??DataTable1_18  ;; 0x420c0001
-   \   000000DE   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   000000E2   0xD832             BHI.N    ??renew_2
-   \   000000E4   0x....             LDR.N    R0,??DataTable1_30
-   \   000000E6   0x6800             LDR      R0,[R0, #+0]
-   \   000000E8   0x....             LDR.N    R1,??DataTable1_19  ;; 0x42340000
-   \   000000EA   0x.... 0x....      BL       __aeabi_cfcmple
-   \   000000EE   0xD22C             BCS.N    ??renew_2
-    110            {
-    111              A2 = (float)(P2 * adress_err2[0] 
-    112                         + KD2*D2 * (adress_err2[0] -adress_err2[1])
-    113                         +KI2*I2*adress_err_all2);//
-   \   000000F0   0x....             LDR.N    R0,??DataTable1_31
-   \   000000F2   0x6801             LDR      R1,[R0, #+0]
-   \   000000F4   0x....             LDR.N    R0,??DataTable1_32
-   \   000000F6   0x6800             LDR      R0,[R0, #+0]
-   \   000000F8   0x.... 0x....      BL       __aeabi_fmul
-   \   000000FC   0x0004             MOVS     R4,R0
-   \   000000FE   0x....             LDR.N    R0,??DataTable1_33
-   \   00000100   0x6801             LDR      R1,[R0, #+0]
-   \   00000102   0x....             LDR.N    R0,??DataTable1_34
-   \   00000104   0x6800             LDR      R0,[R0, #+0]
-   \   00000106   0x.... 0x....      BL       __aeabi_fmul
-   \   0000010A   0x0005             MOVS     R5,R0
-   \   0000010C   0x....             LDR.N    R0,??DataTable1_32
-   \   0000010E   0x6800             LDR      R0,[R0, #+0]
-   \   00000110   0x....             LDR.N    R1,??DataTable1_32
-   \   00000112   0x6849             LDR      R1,[R1, #+4]
-   \   00000114   0x.... 0x....      BL       __aeabi_fsub
-   \   00000118   0x0029             MOVS     R1,R5
-   \   0000011A   0x.... 0x....      BL       __aeabi_fmul
-   \   0000011E   0x0021             MOVS     R1,R4
-   \   00000120   0x.... 0x....      BL       __aeabi_fadd
-   \   00000124   0x0004             MOVS     R4,R0
-   \   00000126   0x....             LDR.N    R0,??DataTable1_35
-   \   00000128   0x7800             LDRB     R0,[R0, #+0]
-   \   0000012A   0x.... 0x....      BL       __aeabi_ui2f
-   \   0000012E   0x....             LDR.N    R1,??DataTable1_36
-   \   00000130   0x6809             LDR      R1,[R1, #+0]
-   \   00000132   0x.... 0x....      BL       __aeabi_fmul
-   \   00000136   0x....             LDR.N    R1,??DataTable1_37
-   \   00000138   0x6809             LDR      R1,[R1, #+0]
-   \   0000013A   0x.... 0x....      BL       __aeabi_fmul
-   \   0000013E   0x0021             MOVS     R1,R4
-   \   00000140   0x.... 0x....      BL       __aeabi_fadd
-   \   00000144   0x....             LDR.N    R1,??DataTable1_38
-   \   00000146   0x6008             STR      R0,[R1, #+0]
-   \   00000148   0xE025             B.N      ??renew_3
-    114            }
-    115            else
+    109          //  if(x>35&&x<45)
+    110          //  {
+    111          //    A2 = (float)(P2 * adress_err2[0] 
+    112          //               + KD2*D2 * (adress_err2[0] -adress_err2[1])
+    113          //               +KI2*I2*adress_err_all2);//
+    114          //  }
+    115          //  else
     116               A2 = (float)(P2 * adress_err2[0] 
-    117                         + D2 * (adress_err2[0] -adress_err2[1])
+    117                         + D2 * (adress_err2[0] -adress_err2[3])
     118                         +KI2*I2*adress_err_all2);//
-   \                     ??renew_2: (+1)
-   \   0000014A   0x....             LDR.N    R0,??DataTable1_31
-   \   0000014C   0x6801             LDR      R1,[R0, #+0]
-   \   0000014E   0x....             LDR.N    R0,??DataTable1_32
-   \   00000150   0x6800             LDR      R0,[R0, #+0]
-   \   00000152   0x.... 0x....      BL       __aeabi_fmul
-   \   00000156   0x0004             MOVS     R4,R0
-   \   00000158   0x....             LDR.N    R0,??DataTable1_32
-   \   0000015A   0x6800             LDR      R0,[R0, #+0]
-   \   0000015C   0x....             LDR.N    R1,??DataTable1_32
-   \   0000015E   0x6849             LDR      R1,[R1, #+4]
-   \   00000160   0x.... 0x....      BL       __aeabi_fsub
-   \   00000164   0x....             LDR.N    R1,??DataTable1_34
-   \   00000166   0x6809             LDR      R1,[R1, #+0]
-   \   00000168   0x.... 0x....      BL       __aeabi_fmul
-   \   0000016C   0x0021             MOVS     R1,R4
-   \   0000016E   0x.... 0x....      BL       __aeabi_fadd
-   \   00000172   0x0004             MOVS     R4,R0
-   \   00000174   0x....             LDR.N    R0,??DataTable1_35
-   \   00000176   0x7800             LDRB     R0,[R0, #+0]
-   \   00000178   0x.... 0x....      BL       __aeabi_ui2f
-   \   0000017C   0x....             LDR.N    R1,??DataTable1_36
-   \   0000017E   0x6809             LDR      R1,[R1, #+0]
-   \   00000180   0x.... 0x....      BL       __aeabi_fmul
-   \   00000184   0x....             LDR.N    R1,??DataTable1_37
-   \   00000186   0x6809             LDR      R1,[R1, #+0]
-   \   00000188   0x.... 0x....      BL       __aeabi_fmul
-   \   0000018C   0x0021             MOVS     R1,R4
-   \   0000018E   0x.... 0x....      BL       __aeabi_fadd
-   \   00000192   0x....             LDR.N    R1,??DataTable1_38
-   \   00000194   0x6008             STR      R0,[R1, #+0]
+   \   00000066   0x....             LDR.N    R0,??DataTable1_26
+   \   00000068   0x6801             LDR      R1,[R0, #+0]
+   \   0000006A   0x....             LDR.N    R0,??DataTable1_27
+   \   0000006C   0x6800             LDR      R0,[R0, #+0]
+   \   0000006E   0x.... 0x....      BL       __aeabi_fmul
+   \   00000072   0x0004             MOVS     R4,R0
+   \   00000074   0x....             LDR.N    R0,??DataTable1_27
+   \   00000076   0x6800             LDR      R0,[R0, #+0]
+   \   00000078   0x....             LDR.N    R1,??DataTable1_27
+   \   0000007A   0x68C9             LDR      R1,[R1, #+12]
+   \   0000007C   0x.... 0x....      BL       __aeabi_fsub
+   \   00000080   0x....             LDR.N    R1,??DataTable1_28
+   \   00000082   0x6809             LDR      R1,[R1, #+0]
+   \   00000084   0x.... 0x....      BL       __aeabi_fmul
+   \   00000088   0x0021             MOVS     R1,R4
+   \   0000008A   0x.... 0x....      BL       __aeabi_fadd
+   \   0000008E   0x0004             MOVS     R4,R0
+   \   00000090   0x....             LDR.N    R0,??DataTable1_29
+   \   00000092   0x7800             LDRB     R0,[R0, #+0]
+   \   00000094   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000098   0x....             LDR.N    R1,??DataTable1_30
+   \   0000009A   0x6809             LDR      R1,[R1, #+0]
+   \   0000009C   0x.... 0x....      BL       __aeabi_fmul
+   \   000000A0   0x....             LDR.N    R1,??DataTable1_31
+   \   000000A2   0x6809             LDR      R1,[R1, #+0]
+   \   000000A4   0x.... 0x....      BL       __aeabi_fmul
+   \   000000A8   0x0021             MOVS     R1,R4
+   \   000000AA   0x.... 0x....      BL       __aeabi_fadd
+   \   000000AE   0x....             LDR.N    R1,??DataTable1_32
+   \   000000B0   0x6008             STR      R0,[R1, #+0]
     119            F2=A2*4.222;
-   \                     ??renew_3: (+1)
-   \   00000196   0x....             LDR.N    R0,??DataTable1_38
-   \   00000198   0x6800             LDR      R0,[R0, #+0]
-   \   0000019A   0x.... 0x....      BL       __aeabi_f2d
-   \   0000019E   0x....             LDR.N    R2,??DataTable1_28  ;; 0xf7ced917
-   \   000001A0   0x....             LDR.N    R3,??DataTable1_29  ;; 0x4010e353
-   \   000001A2   0x.... 0x....      BL       __aeabi_dmul
-   \   000001A6   0x.... 0x....      BL       __aeabi_d2f
-   \   000001AA   0x....             LDR.N    R1,??DataTable1
-   \   000001AC   0x6008             STR      R0,[R1, #+0]
+   \   000000B2   0x....             LDR.N    R0,??DataTable1_32
+   \   000000B4   0x6800             LDR      R0,[R0, #+0]
+   \   000000B6   0x.... 0x....      BL       __aeabi_f2d
+   \   000000BA   0x....             LDR.N    R2,??DataTable1_24  ;; 0xf7ced917
+   \   000000BC   0x....             LDR.N    R3,??DataTable1_25  ;; 0x4010e353
+   \   000000BE   0x.... 0x....      BL       __aeabi_dmul
+   \   000000C2   0x.... 0x....      BL       __aeabi_d2f
+   \   000000C6   0x....             LDR.N    R1,??DataTable1
+   \   000000C8   0x6008             STR      R0,[R1, #+0]
     120          
     121          
     122            
@@ -677,28 +577,28 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
     134          //    + KI1*I1 * angle_err_all ;
     135            
     136            if(F>350)
-   \   000001AE   0x....             LDR.N    R0,??DataTable1_7
-   \   000001B0   0x6800             LDR      R0,[R0, #+0]
-   \   000001B2   0x....             LDR.N    R1,??DataTable1_39  ;; 0x43af0001
-   \   000001B4   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   000001B8   0xD803             BHI.N    ??renew_4
+   \   000000CA   0x....             LDR.N    R0,??DataTable1_7
+   \   000000CC   0x6800             LDR      R0,[R0, #+0]
+   \   000000CE   0x....             LDR.N    R1,??DataTable1_33  ;; 0x43af0001
+   \   000000D0   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   000000D4   0xD803             BHI.N    ??renew_0
     137              F=350;
-   \   000001BA   0x....             LDR.N    R0,??DataTable1_40  ;; 0x43af0000
-   \   000001BC   0x....             LDR.N    R1,??DataTable1_7
-   \   000001BE   0x6008             STR      R0,[R1, #+0]
-   \   000001C0   0xE008             B.N      ??renew_5
+   \   000000D6   0x....             LDR.N    R0,??DataTable1_34  ;; 0x43af0000
+   \   000000D8   0x....             LDR.N    R1,??DataTable1_7
+   \   000000DA   0x6008             STR      R0,[R1, #+0]
+   \   000000DC   0xE008             B.N      ??renew_1
     138            else 
     139              if(F<-350)
-   \                     ??renew_4: (+1)
-   \   000001C2   0x....             LDR.N    R0,??DataTable1_7
-   \   000001C4   0x6800             LDR      R0,[R0, #+0]
-   \   000001C6   0x....             LDR.N    R1,??DataTable1_41  ;; 0xc3af0000
-   \   000001C8   0x.... 0x....      BL       __aeabi_cfcmple
-   \   000001CC   0xD202             BCS.N    ??renew_5
+   \                     ??renew_0: (+1)
+   \   000000DE   0x....             LDR.N    R0,??DataTable1_7
+   \   000000E0   0x6800             LDR      R0,[R0, #+0]
+   \   000000E2   0x....             LDR.N    R1,??DataTable1_35  ;; 0xc3af0000
+   \   000000E4   0x.... 0x....      BL       __aeabi_cfcmple
+   \   000000E8   0xD202             BCS.N    ??renew_1
     140                 F=-350;
-   \   000001CE   0x....             LDR.N    R0,??DataTable1_41  ;; 0xc3af0000
-   \   000001D0   0x....             LDR.N    R1,??DataTable1_7
-   \   000001D2   0x6008             STR      R0,[R1, #+0]
+   \   000000EA   0x....             LDR.N    R0,??DataTable1_35  ;; 0xc3af0000
+   \   000000EC   0x....             LDR.N    R1,??DataTable1_7
+   \   000000EE   0x6008             STR      R0,[R1, #+0]
     141            
     142          //   angle_err2=A2-angle2;
     143          //  
@@ -713,34 +613,34 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
     152          //  F2=P12 * angle_err2 
     153          //    + KI12*I1 * angle_err_all2 ;
     154            if(F2>350)
-   \                     ??renew_5: (+1)
-   \   000001D4   0x....             LDR.N    R0,??DataTable1
-   \   000001D6   0x6800             LDR      R0,[R0, #+0]
-   \   000001D8   0x....             LDR.N    R1,??DataTable1_39  ;; 0x43af0001
-   \   000001DA   0x.... 0x....      BL       __aeabi_cfrcmple
-   \   000001DE   0xD803             BHI.N    ??renew_6
+   \                     ??renew_1: (+1)
+   \   000000F0   0x....             LDR.N    R0,??DataTable1
+   \   000000F2   0x6800             LDR      R0,[R0, #+0]
+   \   000000F4   0x....             LDR.N    R1,??DataTable1_33  ;; 0x43af0001
+   \   000000F6   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   000000FA   0xD803             BHI.N    ??renew_2
     155              F2=350;
-   \   000001E0   0x....             LDR.N    R0,??DataTable1_40  ;; 0x43af0000
-   \   000001E2   0x....             LDR.N    R1,??DataTable1
-   \   000001E4   0x6008             STR      R0,[R1, #+0]
-   \   000001E6   0xE008             B.N      ??renew_7
+   \   000000FC   0x....             LDR.N    R0,??DataTable1_34  ;; 0x43af0000
+   \   000000FE   0x....             LDR.N    R1,??DataTable1
+   \   00000100   0x6008             STR      R0,[R1, #+0]
+   \   00000102   0xE008             B.N      ??renew_3
     156            else 
     157              if(F2<-350)
-   \                     ??renew_6: (+1)
-   \   000001E8   0x....             LDR.N    R0,??DataTable1
-   \   000001EA   0x6800             LDR      R0,[R0, #+0]
-   \   000001EC   0x....             LDR.N    R1,??DataTable1_41  ;; 0xc3af0000
-   \   000001EE   0x.... 0x....      BL       __aeabi_cfcmple
-   \   000001F2   0xD202             BCS.N    ??renew_7
+   \                     ??renew_2: (+1)
+   \   00000104   0x....             LDR.N    R0,??DataTable1
+   \   00000106   0x6800             LDR      R0,[R0, #+0]
+   \   00000108   0x....             LDR.N    R1,??DataTable1_35  ;; 0xc3af0000
+   \   0000010A   0x.... 0x....      BL       __aeabi_cfcmple
+   \   0000010E   0xD202             BCS.N    ??renew_3
     158                 F2=-350;
-   \   000001F4   0x....             LDR.N    R0,??DataTable1_41  ;; 0xc3af0000
-   \   000001F6   0x....             LDR.N    R1,??DataTable1
-   \   000001F8   0x6008             STR      R0,[R1, #+0]
+   \   00000110   0x....             LDR.N    R0,??DataTable1_35  ;; 0xc3af0000
+   \   00000112   0x....             LDR.N    R1,??DataTable1
+   \   00000114   0x6008             STR      R0,[R1, #+0]
     159          
     160            
     161          }
-   \                     ??renew_7: (+1)
-   \   000001FA   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+   \                     ??renew_3: (+1)
+   \   00000116   0xBD10             POP      {R4,PC}          ;; return
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1:
@@ -760,15 +660,15 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_4:
-   \   00000000   0x45264001         DC32     0x45264001
+   \   00000000   0x4564C001         DC32     0x4564c001
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_5:
-   \   00000000   0x45264000         DC32     0x45264000
+   \   00000000   0x4564C000         DC32     0x4564c000
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_6:
-   \   00000000   0x4500C000         DC32     0x4500c000
+   \   00000000   0x44848000         DC32     0x44848000
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_7:
@@ -792,15 +692,15 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_12:
-   \   00000000   0x452DC001         DC32     0x452dc001
+   \   00000000   0x456C4001         DC32     0x456c4001
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_13:
-   \   00000000   0x452DC000         DC32     0x452dc000
+   \   00000000   0x456C4000         DC32     0x456c4000
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_14:
-   \   00000000   0x45070000         DC32     0x45070000
+   \   00000000   0x44910000         DC32     0x44910000
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_15:
@@ -812,102 +712,78 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable1_17:
-   \   00000000   0x........         DC32     y
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_18:
-   \   00000000   0x420C0001         DC32     0x420c0001
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_19:
-   \   00000000   0x42340000         DC32     0x42340000
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_20:
    \   00000000   0x........         DC32     P
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_21:
+   \                     ??DataTable1_18:
    \   00000000   0x........         DC32     adress_err
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_22:
-   \   00000000   0x........         DC32     KD
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_23:
+   \                     ??DataTable1_19:
    \   00000000   0x........         DC32     D
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_24:
+   \                     ??DataTable1_20:
    \   00000000   0x........         DC32     KI
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_25:
+   \                     ??DataTable1_21:
    \   00000000   0x........         DC32     I
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_26:
+   \                     ??DataTable1_22:
    \   00000000   0x........         DC32     adress_err_all
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_27:
+   \                     ??DataTable1_23:
    \   00000000   0x........         DC32     A
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_28:
+   \                     ??DataTable1_24:
    \   00000000   0xF7CED917         DC32     0xf7ced917
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_29:
+   \                     ??DataTable1_25:
    \   00000000   0x4010E353         DC32     0x4010e353
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_30:
-   \   00000000   0x........         DC32     x
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_31:
+   \                     ??DataTable1_26:
    \   00000000   0x........         DC32     `P2`
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_32:
+   \                     ??DataTable1_27:
    \   00000000   0x........         DC32     adress_err2
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_33:
-   \   00000000   0x........         DC32     KD2
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_34:
+   \                     ??DataTable1_28:
    \   00000000   0x........         DC32     D2
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_35:
+   \                     ??DataTable1_29:
    \   00000000   0x........         DC32     KI2
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_36:
+   \                     ??DataTable1_30:
    \   00000000   0x........         DC32     I2
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_37:
+   \                     ??DataTable1_31:
    \   00000000   0x........         DC32     adress_err_all2
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_38:
+   \                     ??DataTable1_32:
    \   00000000   0x........         DC32     A2
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_39:
+   \                     ??DataTable1_33:
    \   00000000   0x43AF0001         DC32     0x43af0001
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_40:
+   \                     ??DataTable1_34:
    \   00000000   0x43AF0000         DC32     0x43af0000
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1_41:
+   \                     ??DataTable1_35:
    \   00000000   0xC3AF0000         DC32     0xc3af0000
     162          
     163          
@@ -931,16 +807,16 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
          8   -> renew
          8 __aeabi_cfcmple
          8 __aeabi_cfrcmple
-      16   renew
-        16   -> __aeabi_d2f
-        16   -> __aeabi_dmul
-        16   -> __aeabi_f2d
-        16   -> __aeabi_fadd
-        16   -> __aeabi_fmul
-        16   -> __aeabi_fsub
-        16   -> __aeabi_ui2f
-        16 __aeabi_cfcmple
-        16 __aeabi_cfrcmple
+       8   renew
+         8   -> __aeabi_d2f
+         8   -> __aeabi_dmul
+         8   -> __aeabi_f2d
+         8   -> __aeabi_fadd
+         8   -> __aeabi_fmul
+         8   -> __aeabi_fsub
+         8   -> __aeabi_ui2f
+         8 __aeabi_cfcmple
+         8 __aeabi_cfrcmple
 
 
    Section sizes:
@@ -977,13 +853,7 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
        4  ??DataTable1_33
        4  ??DataTable1_34
        4  ??DataTable1_35
-       4  ??DataTable1_36
-       4  ??DataTable1_37
-       4  ??DataTable1_38
-       4  ??DataTable1_39
        4  ??DataTable1_4
-       4  ??DataTable1_40
-       4  ??DataTable1_41
        4  ??DataTable1_5
        4  ??DataTable1_6
        4  ??DataTable1_7
@@ -995,7 +865,6 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
        4  F2
        1  KI
        1  KI2
-       1  KO
        1  KO2
        4  adress
        4  adress2
@@ -1007,10 +876,10 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
        4  angle_err2
        4  angle_err_all
        4  angle_err_all2
-     466  control
+     418  control
        1  j
        1  j2
-     508  renew
+     280  renew
        4  x
        4  x_sit
        4  xf
@@ -1019,12 +888,12 @@ C:\Users\shize\Desktop\电设\bloodc\project\balance-ball\my\control.c
        4  yf
 
  
-   102 bytes in section .bss
-     8 bytes in section .data
- 1 142 bytes in section .text
+ 101 bytes in section .bss
+   8 bytes in section .data
+ 842 bytes in section .text
  
- 1 142 bytes of CODE memory
-   110 bytes of DATA memory
+ 842 bytes of CODE memory
+ 109 bytes of DATA memory
 
 Errors: none
 Warnings: none

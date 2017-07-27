@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR ANSI C/C++ Compiler V7.60.2.11341/W32 for ARM      27/Jul/2017  11:16:35
+// IAR ANSI C/C++ Compiler V7.60.2.11341/W32 for ARM      27/Jul/2017  17:09:38
 // Copyright 1999-2016 IAR Systems AB.
 //
 //    Cpu mode     =  thumb
@@ -64,8 +64,6 @@
         EXTERN D2
         EXTERN I
         EXTERN I2
-        EXTERN KD
-        EXTERN KD2
         EXTERN LPLD_FTM_PWM_ChangeDuty
         EXTERN P
         EXTERN `P2`
@@ -88,7 +86,6 @@
         PUBLIC F2
         PUBLIC KI
         PUBLIC KI2
-        PUBLIC KO
         PUBLIC KO2
         PUBLIC adress
         PUBLIC adress2
@@ -133,12 +130,7 @@
 
         SECTION `.bss`:DATA:REORDER:NOROOT(0)
         DATA
-//   20 char KO,KI;
-KO:
-        DS8 1
-
-        SECTION `.bss`:DATA:REORDER:NOROOT(0)
-        DATA
+//   20 char KI;
 KI:
         DS8 1
 //   21 //float  KI1;
@@ -306,7 +298,7 @@ control:
 //   58       renew();
         BL       renew
 //   59       if(0<F2<10&&angle2>0)
-        LDR.W    R0,??DataTable1
+        LDR.N    R0,??DataTable1
         LDR      R0,[R0, #+0]
         MOVS     R1,#+0
         BL       __aeabi_cfrcmple
@@ -316,31 +308,31 @@ control:
 ??control_0:
         MOVS     R0,#+0
 ??control_1:
-        LDR.W    R0,??DataTable1_1
+        LDR.N    R0,??DataTable1_1
         LDR      R0,[R0, #+0]
         MOVS     R1,#+0
         BL       __aeabi_cfrcmple
         BCS.N    ??control_2
 //   60       xf=2360-F2-angle2*0;
-        LDR.W    R0,??DataTable1_2  ;; 0x45138000
-        LDR.W    R1,??DataTable1
+        LDR.N    R0,??DataTable1_2  ;; 0x45138000
+        LDR.N    R1,??DataTable1
         LDR      R1,[R1, #+0]
         BL       __aeabi_fsub
         MOVS     R4,R0
-        LDR.W    R0,??DataTable1_1
+        LDR.N    R0,??DataTable1_1
         LDR      R1,[R0, #+0]
         MOVS     R0,#+0
         BL       __aeabi_fmul
         MOVS     R1,R0
         MOVS     R0,R4
         BL       __aeabi_fsub
-        LDR.W    R1,??DataTable1_3
+        LDR.N    R1,??DataTable1_3
         STR      R0,[R1, #+0]
         B.N      ??control_3
 //   61       else 
 //   62         if(0>F2>-10&&angle2<0)
 ??control_2:
-        LDR.W    R0,??DataTable1
+        LDR.N    R0,??DataTable1
         LDR      R0,[R0, #+0]
         MOVS     R1,#+0
         BL       __aeabi_cfcmple
@@ -350,63 +342,63 @@ control:
 ??control_4:
         MOVS     R0,#+0
 ??control_5:
-        LDR.W    R0,??DataTable1_1
+        LDR.N    R0,??DataTable1_1
         LDR      R0,[R0, #+0]
         MOVS     R1,#+0
         BL       __aeabi_cfcmple
         BCS.N    ??control_6
 //   63               xf=2360-F2-angle2*0;
-        LDR.W    R0,??DataTable1_2  ;; 0x45138000
-        LDR.W    R1,??DataTable1
+        LDR.N    R0,??DataTable1_2  ;; 0x45138000
+        LDR.N    R1,??DataTable1
         LDR      R1,[R1, #+0]
         BL       __aeabi_fsub
         MOVS     R4,R0
-        LDR.W    R0,??DataTable1_1
+        LDR.N    R0,??DataTable1_1
         LDR      R1,[R0, #+0]
         MOVS     R0,#+0
         BL       __aeabi_fmul
         MOVS     R1,R0
         MOVS     R0,R4
         BL       __aeabi_fsub
-        LDR.W    R1,??DataTable1_3
+        LDR.N    R1,??DataTable1_3
         STR      R0,[R1, #+0]
         B.N      ??control_3
 //   64         else
 //   65               xf=2360-F2;
 ??control_6:
-        LDR.W    R0,??DataTable1_2  ;; 0x45138000
-        LDR.W    R1,??DataTable1
+        LDR.N    R0,??DataTable1_2  ;; 0x45138000
+        LDR.N    R1,??DataTable1
         LDR      R1,[R1, #+0]
         BL       __aeabi_fsub
-        LDR.W    R1,??DataTable1_3
+        LDR.N    R1,??DataTable1_3
         STR      R0,[R1, #+0]
-//   66       if(xf>2660)
+//   66       if(xf>3660)
 ??control_3:
-        LDR.W    R0,??DataTable1_3
+        LDR.N    R0,??DataTable1_3
         LDR      R0,[R0, #+0]
-        LDR.W    R1,??DataTable1_4  ;; 0x45264001
+        LDR.N    R1,??DataTable1_4  ;; 0x4564c001
         BL       __aeabi_cfrcmple
         BHI.N    ??control_7
-//   67         xf=2660;
-        LDR.W    R0,??DataTable1_5  ;; 0x45264000
-        LDR.W    R1,??DataTable1_3
+//   67         xf=3660;
+        LDR.N    R0,??DataTable1_5  ;; 0x4564c000
+        LDR.N    R1,??DataTable1_3
         STR      R0,[R1, #+0]
-//   68       if(xf<2060)
+//   68       if(xf<1060)
 ??control_7:
-        LDR.W    R0,??DataTable1_3
+        LDR.N    R0,??DataTable1_3
         LDR      R0,[R0, #+0]
-        LDR.W    R1,??DataTable1_6  ;; 0x4500c000
+        LDR.N    R1,??DataTable1_6  ;; 0x44848000
         BL       __aeabi_cfcmple
         BCS.N    ??control_8
-//   69         xf=2060;
-        LDR.W    R0,??DataTable1_6  ;; 0x4500c000
+//   69         xf=1060;
+        LDR.N    R0,??DataTable1_6  ;; 0x44848000
         LDR.N    R1,??DataTable1_3
         STR      R0,[R1, #+0]
 //   70       if(10>F>0&&angle<0)
 ??control_8:
-        LDR.W    R0,??DataTable1_7
+        LDR.N    R0,??DataTable1_7
         LDR      R0,[R0, #+0]
-        LDR.W    R1,??DataTable1_8  ;; 0x41200000
+        LDR.N    R1,??DataTable1_8  ;; 0x41200000
         BL       __aeabi_cfcmple
         BCS.N    ??control_9
         MOVS     R0,#+1
@@ -481,26 +473,26 @@ control:
         BL       __aeabi_fadd
         LDR.N    R1,??DataTable1_11
         STR      R0,[R1, #+0]
-//   77       if(yf>2780)
+//   77       if(yf>3780)
 ??control_12:
         LDR.N    R0,??DataTable1_11
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_12  ;; 0x452dc001
+        LDR.N    R1,??DataTable1_12  ;; 0x456c4001
         BL       __aeabi_cfrcmple
         BHI.N    ??control_16
-//   78         yf=2780;
-        LDR.N    R0,??DataTable1_13  ;; 0x452dc000
+//   78         yf=3780;
+        LDR.N    R0,??DataTable1_13  ;; 0x456c4000
         LDR.N    R1,??DataTable1_11
         STR      R0,[R1, #+0]
-//   79       if(yf<2160)
+//   79       if(yf<1160)
 ??control_16:
         LDR.N    R0,??DataTable1_11
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_14  ;; 0x45070000
+        LDR.N    R1,??DataTable1_14  ;; 0x44910000
         BL       __aeabi_cfcmple
         BCS.N    ??control_17
-//   80         yf=2160;
-        LDR.N    R0,??DataTable1_14  ;; 0x45070000
+//   80         yf=1160;
+        LDR.N    R0,??DataTable1_14  ;; 0x44910000
         LDR.N    R1,??DataTable1_11
         STR      R0,[R1, #+0]
 //   81       LPLD_FTM_PWM_ChangeDuty(FTM0,FTM_Ch1,(uint16)(xf));
@@ -536,103 +528,55 @@ control:
 //   90 void renew()
 //   91 {
 renew:
-        PUSH     {R3-R5,LR}
+        PUSH     {R4,LR}
 //   92 
 //   93   //¼ÆËã
-//   94   if(y>35&&y<45)
-        LDR.N    R0,??DataTable1_17
-        LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_18  ;; 0x420c0001
-        BL       __aeabi_cfrcmple
-        BHI.N    ??renew_0
-        LDR.N    R0,??DataTable1_17
-        LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_19  ;; 0x42340000
-        BL       __aeabi_cfcmple
-        BCS.N    ??renew_0
-//   95   {
-//   96     A = (float)(P * adress_err[0] 
-//   97              + KD*D * (adress_err[0] -adress_err[1])
-//   98              +KI*I*adress_err_all);//
-        LDR.N    R0,??DataTable1_20
-        LDR      R1,[R0, #+0]
-        LDR.N    R0,??DataTable1_21
-        LDR      R0,[R0, #+0]
-        BL       __aeabi_fmul
-        MOVS     R4,R0
-        LDR.N    R0,??DataTable1_22
-        LDR      R1,[R0, #+0]
-        LDR.N    R0,??DataTable1_23
-        LDR      R0,[R0, #+0]
-        BL       __aeabi_fmul
-        MOVS     R5,R0
-        LDR.N    R0,??DataTable1_21
-        LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_21
-        LDR      R1,[R1, #+4]
-        BL       __aeabi_fsub
-        MOVS     R1,R5
-        BL       __aeabi_fmul
-        MOVS     R1,R4
-        BL       __aeabi_fadd
-        MOVS     R4,R0
-        LDR.N    R0,??DataTable1_24
-        LDRB     R0,[R0, #+0]
-        BL       __aeabi_ui2f
-        LDR.N    R1,??DataTable1_25
-        LDR      R1,[R1, #+0]
-        BL       __aeabi_fmul
-        LDR.N    R1,??DataTable1_26
-        LDR      R1,[R1, #+0]
-        BL       __aeabi_fmul
-        MOVS     R1,R4
-        BL       __aeabi_fadd
-        LDR.N    R1,??DataTable1_27
-        STR      R0,[R1, #+0]
-        B.N      ??renew_1
-//   99   }
-//  100   else
+//   94 //  if(y>35&&y<45)
+//   95 //  {
+//   96 //    A = (float)(P * adress_err[0] 
+//   97 //             + KD*D * (adress_err[0] -adress_err[1])
+//   98 //             +KI*I*adress_err_all);//
+//   99 //  }
+//  100 //  else
 //  101     A=(float)(P * adress_err[0] 
-//  102              + D * (adress_err[0] -adress_err[1])
+//  102              + D * (adress_err[0] -adress_err[3])
 //  103              +KI*I*adress_err_all);//
-??renew_0:
-        LDR.N    R0,??DataTable1_20
+        LDR.N    R0,??DataTable1_17
         LDR      R1,[R0, #+0]
-        LDR.N    R0,??DataTable1_21
+        LDR.N    R0,??DataTable1_18
         LDR      R0,[R0, #+0]
         BL       __aeabi_fmul
         MOVS     R4,R0
-        LDR.N    R0,??DataTable1_21
+        LDR.N    R0,??DataTable1_18
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_21
-        LDR      R1,[R1, #+4]
+        LDR.N    R1,??DataTable1_18
+        LDR      R1,[R1, #+12]
         BL       __aeabi_fsub
-        LDR.N    R1,??DataTable1_23
+        LDR.N    R1,??DataTable1_19
         LDR      R1,[R1, #+0]
         BL       __aeabi_fmul
         MOVS     R1,R4
         BL       __aeabi_fadd
         MOVS     R4,R0
-        LDR.N    R0,??DataTable1_24
+        LDR.N    R0,??DataTable1_20
         LDRB     R0,[R0, #+0]
         BL       __aeabi_ui2f
-        LDR.N    R1,??DataTable1_25
+        LDR.N    R1,??DataTable1_21
         LDR      R1,[R1, #+0]
         BL       __aeabi_fmul
-        LDR.N    R1,??DataTable1_26
+        LDR.N    R1,??DataTable1_22
         LDR      R1,[R1, #+0]
         BL       __aeabi_fmul
         MOVS     R1,R4
         BL       __aeabi_fadd
-        LDR.N    R1,??DataTable1_27
+        LDR.N    R1,??DataTable1_23
         STR      R0,[R1, #+0]
 //  104   F=A*4.222;
-??renew_1:
-        LDR.N    R0,??DataTable1_27
+        LDR.N    R0,??DataTable1_23
         LDR      R0,[R0, #+0]
         BL       __aeabi_f2d
-        LDR.N    R2,??DataTable1_28  ;; 0xf7ced917
-        LDR.N    R3,??DataTable1_29  ;; 0x4010e353
+        LDR.N    R2,??DataTable1_24  ;; 0xf7ced917
+        LDR.N    R3,??DataTable1_25  ;; 0x4010e353
         BL       __aeabi_dmul
         BL       __aeabi_d2f
         LDR.N    R1,??DataTable1_7
@@ -641,100 +585,52 @@ renew:
 //  106 
 //  107 
 //  108   //¼ÆËã
-//  109   if(x>35&&x<45)
-        LDR.N    R0,??DataTable1_30
-        LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_18  ;; 0x420c0001
-        BL       __aeabi_cfrcmple
-        BHI.N    ??renew_2
-        LDR.N    R0,??DataTable1_30
-        LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_19  ;; 0x42340000
-        BL       __aeabi_cfcmple
-        BCS.N    ??renew_2
-//  110   {
-//  111     A2 = (float)(P2 * adress_err2[0] 
-//  112                + KD2*D2 * (adress_err2[0] -adress_err2[1])
-//  113                +KI2*I2*adress_err_all2);//
-        LDR.N    R0,??DataTable1_31
-        LDR      R1,[R0, #+0]
-        LDR.N    R0,??DataTable1_32
-        LDR      R0,[R0, #+0]
-        BL       __aeabi_fmul
-        MOVS     R4,R0
-        LDR.N    R0,??DataTable1_33
-        LDR      R1,[R0, #+0]
-        LDR.N    R0,??DataTable1_34
-        LDR      R0,[R0, #+0]
-        BL       __aeabi_fmul
-        MOVS     R5,R0
-        LDR.N    R0,??DataTable1_32
-        LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_32
-        LDR      R1,[R1, #+4]
-        BL       __aeabi_fsub
-        MOVS     R1,R5
-        BL       __aeabi_fmul
-        MOVS     R1,R4
-        BL       __aeabi_fadd
-        MOVS     R4,R0
-        LDR.N    R0,??DataTable1_35
-        LDRB     R0,[R0, #+0]
-        BL       __aeabi_ui2f
-        LDR.N    R1,??DataTable1_36
-        LDR      R1,[R1, #+0]
-        BL       __aeabi_fmul
-        LDR.N    R1,??DataTable1_37
-        LDR      R1,[R1, #+0]
-        BL       __aeabi_fmul
-        MOVS     R1,R4
-        BL       __aeabi_fadd
-        LDR.N    R1,??DataTable1_38
-        STR      R0,[R1, #+0]
-        B.N      ??renew_3
-//  114   }
-//  115   else
+//  109 //  if(x>35&&x<45)
+//  110 //  {
+//  111 //    A2 = (float)(P2 * adress_err2[0] 
+//  112 //               + KD2*D2 * (adress_err2[0] -adress_err2[1])
+//  113 //               +KI2*I2*adress_err_all2);//
+//  114 //  }
+//  115 //  else
 //  116      A2 = (float)(P2 * adress_err2[0] 
-//  117                + D2 * (adress_err2[0] -adress_err2[1])
+//  117                + D2 * (adress_err2[0] -adress_err2[3])
 //  118                +KI2*I2*adress_err_all2);//
-??renew_2:
-        LDR.N    R0,??DataTable1_31
+        LDR.N    R0,??DataTable1_26
         LDR      R1,[R0, #+0]
-        LDR.N    R0,??DataTable1_32
+        LDR.N    R0,??DataTable1_27
         LDR      R0,[R0, #+0]
         BL       __aeabi_fmul
         MOVS     R4,R0
-        LDR.N    R0,??DataTable1_32
+        LDR.N    R0,??DataTable1_27
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_32
-        LDR      R1,[R1, #+4]
+        LDR.N    R1,??DataTable1_27
+        LDR      R1,[R1, #+12]
         BL       __aeabi_fsub
-        LDR.N    R1,??DataTable1_34
+        LDR.N    R1,??DataTable1_28
         LDR      R1,[R1, #+0]
         BL       __aeabi_fmul
         MOVS     R1,R4
         BL       __aeabi_fadd
         MOVS     R4,R0
-        LDR.N    R0,??DataTable1_35
+        LDR.N    R0,??DataTable1_29
         LDRB     R0,[R0, #+0]
         BL       __aeabi_ui2f
-        LDR.N    R1,??DataTable1_36
+        LDR.N    R1,??DataTable1_30
         LDR      R1,[R1, #+0]
         BL       __aeabi_fmul
-        LDR.N    R1,??DataTable1_37
+        LDR.N    R1,??DataTable1_31
         LDR      R1,[R1, #+0]
         BL       __aeabi_fmul
         MOVS     R1,R4
         BL       __aeabi_fadd
-        LDR.N    R1,??DataTable1_38
+        LDR.N    R1,??DataTable1_32
         STR      R0,[R1, #+0]
 //  119   F2=A2*4.222;
-??renew_3:
-        LDR.N    R0,??DataTable1_38
+        LDR.N    R0,??DataTable1_32
         LDR      R0,[R0, #+0]
         BL       __aeabi_f2d
-        LDR.N    R2,??DataTable1_28  ;; 0xf7ced917
-        LDR.N    R3,??DataTable1_29  ;; 0x4010e353
+        LDR.N    R2,??DataTable1_24  ;; 0xf7ced917
+        LDR.N    R3,??DataTable1_25  ;; 0x4010e353
         BL       __aeabi_dmul
         BL       __aeabi_d2f
         LDR.N    R1,??DataTable1
@@ -758,24 +654,24 @@ renew:
 //  136   if(F>350)
         LDR.N    R0,??DataTable1_7
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_39  ;; 0x43af0001
+        LDR.N    R1,??DataTable1_33  ;; 0x43af0001
         BL       __aeabi_cfrcmple
-        BHI.N    ??renew_4
+        BHI.N    ??renew_0
 //  137     F=350;
-        LDR.N    R0,??DataTable1_40  ;; 0x43af0000
+        LDR.N    R0,??DataTable1_34  ;; 0x43af0000
         LDR.N    R1,??DataTable1_7
         STR      R0,[R1, #+0]
-        B.N      ??renew_5
+        B.N      ??renew_1
 //  138   else 
 //  139     if(F<-350)
-??renew_4:
+??renew_0:
         LDR.N    R0,??DataTable1_7
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_41  ;; 0xc3af0000
+        LDR.N    R1,??DataTable1_35  ;; 0xc3af0000
         BL       __aeabi_cfcmple
-        BCS.N    ??renew_5
+        BCS.N    ??renew_1
 //  140        F=-350;
-        LDR.N    R0,??DataTable1_41  ;; 0xc3af0000
+        LDR.N    R0,??DataTable1_35  ;; 0xc3af0000
         LDR.N    R1,??DataTable1_7
         STR      R0,[R1, #+0]
 //  141   
@@ -792,34 +688,34 @@ renew:
 //  152 //  F2=P12 * angle_err2 
 //  153 //    + KI12*I1 * angle_err_all2 ;
 //  154   if(F2>350)
-??renew_5:
+??renew_1:
         LDR.N    R0,??DataTable1
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_39  ;; 0x43af0001
+        LDR.N    R1,??DataTable1_33  ;; 0x43af0001
         BL       __aeabi_cfrcmple
-        BHI.N    ??renew_6
+        BHI.N    ??renew_2
 //  155     F2=350;
-        LDR.N    R0,??DataTable1_40  ;; 0x43af0000
+        LDR.N    R0,??DataTable1_34  ;; 0x43af0000
         LDR.N    R1,??DataTable1
         STR      R0,[R1, #+0]
-        B.N      ??renew_7
+        B.N      ??renew_3
 //  156   else 
 //  157     if(F2<-350)
-??renew_6:
+??renew_2:
         LDR.N    R0,??DataTable1
         LDR      R0,[R0, #+0]
-        LDR.N    R1,??DataTable1_41  ;; 0xc3af0000
+        LDR.N    R1,??DataTable1_35  ;; 0xc3af0000
         BL       __aeabi_cfcmple
-        BCS.N    ??renew_7
+        BCS.N    ??renew_3
 //  158        F2=-350;
-        LDR.N    R0,??DataTable1_41  ;; 0xc3af0000
+        LDR.N    R0,??DataTable1_35  ;; 0xc3af0000
         LDR.N    R1,??DataTable1
         STR      R0,[R1, #+0]
 //  159 
 //  160   
 //  161 }
-??renew_7:
-        POP      {R0,R4,R5,PC}    ;; return
+??renew_3:
+        POP      {R4,PC}          ;; return
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
@@ -849,19 +745,19 @@ renew:
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
 ??DataTable1_4:
-        DC32     0x45264001
+        DC32     0x4564c001
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
 ??DataTable1_5:
-        DC32     0x45264000
+        DC32     0x4564c000
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
 ??DataTable1_6:
-        DC32     0x4500c000
+        DC32     0x44848000
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
@@ -897,19 +793,19 @@ renew:
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
 ??DataTable1_12:
-        DC32     0x452dc001
+        DC32     0x456c4001
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
 ??DataTable1_13:
-        DC32     0x452dc000
+        DC32     0x456c4000
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
 ??DataTable1_14:
-        DC32     0x45070000
+        DC32     0x44910000
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
@@ -927,150 +823,114 @@ renew:
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
 ??DataTable1_17:
-        DC32     y
-
-        SECTION `.text`:CODE:NOROOT(2)
-        SECTION_TYPE SHT_PROGBITS, 0
-        DATA
-??DataTable1_18:
-        DC32     0x420c0001
-
-        SECTION `.text`:CODE:NOROOT(2)
-        SECTION_TYPE SHT_PROGBITS, 0
-        DATA
-??DataTable1_19:
-        DC32     0x42340000
-
-        SECTION `.text`:CODE:NOROOT(2)
-        SECTION_TYPE SHT_PROGBITS, 0
-        DATA
-??DataTable1_20:
         DC32     P
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_21:
+??DataTable1_18:
         DC32     adress_err
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_22:
-        DC32     KD
-
-        SECTION `.text`:CODE:NOROOT(2)
-        SECTION_TYPE SHT_PROGBITS, 0
-        DATA
-??DataTable1_23:
+??DataTable1_19:
         DC32     D
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_24:
+??DataTable1_20:
         DC32     KI
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_25:
+??DataTable1_21:
         DC32     I
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_26:
+??DataTable1_22:
         DC32     adress_err_all
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_27:
+??DataTable1_23:
         DC32     A
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_28:
+??DataTable1_24:
         DC32     0xf7ced917
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_29:
+??DataTable1_25:
         DC32     0x4010e353
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_30:
-        DC32     x
-
-        SECTION `.text`:CODE:NOROOT(2)
-        SECTION_TYPE SHT_PROGBITS, 0
-        DATA
-??DataTable1_31:
+??DataTable1_26:
         DC32     `P2`
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_32:
+??DataTable1_27:
         DC32     adress_err2
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_33:
-        DC32     KD2
-
-        SECTION `.text`:CODE:NOROOT(2)
-        SECTION_TYPE SHT_PROGBITS, 0
-        DATA
-??DataTable1_34:
+??DataTable1_28:
         DC32     D2
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_35:
+??DataTable1_29:
         DC32     KI2
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_36:
+??DataTable1_30:
         DC32     I2
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_37:
+??DataTable1_31:
         DC32     adress_err_all2
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_38:
+??DataTable1_32:
         DC32     A2
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_39:
+??DataTable1_33:
         DC32     0x43af0001
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_40:
+??DataTable1_34:
         DC32     0x43af0000
 
         SECTION `.text`:CODE:NOROOT(2)
         SECTION_TYPE SHT_PROGBITS, 0
         DATA
-??DataTable1_41:
+??DataTable1_35:
         DC32     0xc3af0000
 
         SECTION `.iar_vfe_header`:DATA:NOALLOC:NOROOT(2)
@@ -1094,12 +954,12 @@ renew:
 //  168     
 //  169   
 // 
-//   102 bytes in section .bss
-//     8 bytes in section .data
-// 1 142 bytes in section .text
+// 101 bytes in section .bss
+//   8 bytes in section .data
+// 842 bytes in section .text
 // 
-// 1 142 bytes of CODE memory
-//   110 bytes of DATA memory
+// 842 bytes of CODE memory
+// 109 bytes of DATA memory
 //
 //Errors: none
 //Warnings: none

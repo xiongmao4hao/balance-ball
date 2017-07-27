@@ -15,7 +15,7 @@ static void debug_write_c(void);
 static void FTM_init();
 static void FTM_init2();
 
-extern char KO;
+//extern char KO;
 extern float x;
 extern float y;
 extern float x_sit;
@@ -39,14 +39,14 @@ uint16 TAKE,take1,take2,take;//a
 uint8  gate1,gate2,gate;//b
 uint8  site,site1,site2,site3;//c
 float GATE;
-char  k0=0;
+
 
 //控制相关
 float P,D,P1,I1,I,KD,KD2;
 float P2,D2,P12,I12,I2;
 float angle=0;
 float angle2=0;
-float x_[6],y_[6];
+float x_[8],y_[8];
 
 
 char start,fsend;
@@ -67,15 +67,15 @@ void initialzation()
   
 void variation()
 {
-  P=2.05;
-  I=0;
-  D=0;
+  P=3.28;
+  I=0.31;
+  D=14.19;
 //  P1=2.05;
 //  I1=0.45;
-  KD=KD2=0.79;
-  P2=2.05;
-  I2=0;
-  D2=0;
+//  KD=KD2=0.79;
+  P2=3.28;
+  I2=0.31;
+  D2=14.19;
 //  P12=2.05;
 //  I12=0.45;
 //  fsend=1;
@@ -180,13 +180,13 @@ void NVIC_init(void)
   nvic .NVIC_IRQChannel=PIT0_IRQn;
   nvic.NVIC_IRQChannelEnable=TRUE ;
   nvic.NVIC_IRQChannelGroupPriority=NVIC_PriorityGroup_1;
-  nvic.NVIC_IRQChannelPreemptionPriority=1;
+  nvic.NVIC_IRQChannelPreemptionPriority=0;
   nvic.NVIC_IRQChannelSubPriority=1;
   LPLD_NVIC_Init(nvic);  
   nvic .NVIC_IRQChannel=UART0_RX_TX_IRQn;
   nvic.NVIC_IRQChannelEnable=TRUE ;
   nvic.NVIC_IRQChannelGroupPriority=NVIC_PriorityGroup_1;
-  nvic.NVIC_IRQChannelPreemptionPriority=0;
+  nvic.NVIC_IRQChannelPreemptionPriority=1;
   nvic.NVIC_IRQChannelSubPriority=1;
   LPLD_NVIC_Init(nvic);
   nvic .NVIC_IRQChannel=UART3_RX_TX_IRQn;
@@ -281,53 +281,53 @@ void debug_write(void)
 
 void debug_write_b(void)
 {
-    gate = LPLD_UART_GetChar(UART0);
-    if(gate==0x1c)
-    {
-     gate = LPLD_UART_GetChar(UART0); 
-      if(gate==1)
-      {
-        gate1= LPLD_UART_GetChar(UART0); 
-        gate2= LPLD_UART_GetChar(UART0);
-        GATE=(float)(gate1*256+gate2)/100;
-      }
-      else
-      {
-        gate1= LPLD_UART_GetChar(UART0); 
-        gate2= LPLD_UART_GetChar(UART0); 
-        GATE=(float)(gate1*256+gate2)/100;
-        GATE=-GATE;
-      }
-      angle=GATE-2.34;
-      if(KO==0)
-      {
-        if(angle<0.6&&angle>-0.6)
-         angle=0;
-      }
-    }
-    if(gate==0x2c)
-    {
-     gate = LPLD_UART_GetChar(UART0); 
-      if(gate==1)
-      {
-        gate1= LPLD_UART_GetChar(UART0); 
-        gate2= LPLD_UART_GetChar(UART0);
-        GATE=(float)(gate1*256+gate2)/100;
-      }
-      else
-      {
-        gate1= LPLD_UART_GetChar(UART0); 
-        gate2= LPLD_UART_GetChar(UART0); 
-        GATE=(float)(gate1*256+gate2)/100;
-        GATE=-GATE;
-      }
-      angle2=-(GATE-1.27);
-      if(KO==0)
-      {
-        if(angle2<0.6&&angle2>-0.6)
-         angle2=0;
-      }
-    }
+//    gate = LPLD_UART_GetChar(UART0);
+//    if(gate==0x1c)
+//    {
+//     gate = LPLD_UART_GetChar(UART0); 
+//      if(gate==1)
+//      {
+//        gate1= LPLD_UART_GetChar(UART0); 
+//        gate2= LPLD_UART_GetChar(UART0);
+//        GATE=(float)(gate1*256+gate2)/100;
+//      }
+//      else
+//      {
+//        gate1= LPLD_UART_GetChar(UART0); 
+//        gate2= LPLD_UART_GetChar(UART0); 
+//        GATE=(float)(gate1*256+gate2)/100;
+//        GATE=-GATE;
+//      }
+//      angle=GATE-2.34;
+////      if(KO==0)
+////      {
+////        if(angle<0.6&&angle>-0.6)
+////         angle=0;
+////      }
+//    }
+//    if(gate==0x2c)
+//    {
+//     gate = LPLD_UART_GetChar(UART0); 
+//      if(gate==1)
+//      {
+//        gate1= LPLD_UART_GetChar(UART0); 
+//        gate2= LPLD_UART_GetChar(UART0);
+//        GATE=(float)(gate1*256+gate2)/100;
+//      }
+//      else
+//      {
+//        gate1= LPLD_UART_GetChar(UART0); 
+//        gate2= LPLD_UART_GetChar(UART0); 
+//        GATE=(float)(gate1*256+gate2)/100;
+//        GATE=-GATE;
+//      }
+//      angle2=-(GATE-1.27);
+////      if(KO==0)
+////      {
+////        if(angle2<0.6&&angle2>-0.6)
+////         angle2=0;
+////      }
+//    }
     
 }
 
@@ -355,22 +355,22 @@ void debug_write_c(void)
       y = site1*100+ site2*10+site3;
      
     }
-  if(x_sit-5<x&&x<x_sit+5&&y_sit-5<y&&y<y_sit+5)
-  {
-    k0++;
-    if(k0==4)
-    {
-      k0=3;
-      x=x_sit;
-      y=y_sit;
-    }
-  }
-  else
-    k0=0;
+//  if(x_sit-5<x&&x<x_sit+5&&y_sit-5<y&&y<y_sit+5)
+//  {
+//    k0++;
+//    if(k0==9)
+//    {
+//      k0=8;
+//      x=x_sit;
+//      y=y_sit;
+//    }
+//  }
+//  else
+//    k0=0;
     
     
   int i;
-  for(i=3;i>0;i--)
+  for(i=7;i>0;i--)
   {
     x_[i]=x_[i-1];
   }
@@ -381,7 +381,7 @@ void debug_write_c(void)
 //  }
 //  else
   if(fabs(x-x_[0])<120)
-    x=(int16)(0.5*x_[0]+0.5*x_[1]);
+    x=(int16)(0.25*x_[0]+0.25*x_[1]+0.25*x_[2]+0.25*x_[3]);
   else
     x=x_[0];
   adress2 = x-x_sit;
@@ -402,7 +402,7 @@ void debug_write_c(void)
   if(adress_err_all2<-25)
     adress_err_all2=-25;
  
-  for(i=3;i>0;i--)
+  for(i=7;i>0;i--)
   {
     y_[i]=y_[i-1];
   }
@@ -413,7 +413,7 @@ void debug_write_c(void)
 //  }
 //  else
    if(fabs(y-y_[0])<100)
-    y=(int16)(0.5*y_[0]+0.5*y_[1]);
+    y=(int16)(0.25*y_[0]+0.25*y_[1]+0.25*y_[2]+0.25*y_[3]);
    else
      y=y_[0];
   //更新

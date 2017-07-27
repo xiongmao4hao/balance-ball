@@ -17,7 +17,7 @@ extern float angle2;
 
 
 
-char KO,KI;
+char KI;
 //float  KI1;
 char KO2,KI2;
 //float  KI12;
@@ -63,10 +63,10 @@ void control()
               xf=2360-F2-angle2*0;
         else
               xf=2360-F2;
-      if(xf>2660)
-        xf=2660;
-      if(xf<2060)
-        xf=2060;
+      if(xf>3660)
+        xf=3660;
+      if(xf<1060)
+        xf=1060;
       if(10>F>0&&angle<0)
      yf=2480+F-angle*0;
       else 
@@ -74,10 +74,10 @@ void control()
               yf=2480+F-angle*0; 
         else
               yf=2480+F;
-      if(yf>2780)
-        yf=2780;
-      if(yf<2160)
-        yf=2160;
+      if(yf>3780)
+        yf=3780;
+      if(yf<1160)
+        yf=1160;
       LPLD_FTM_PWM_ChangeDuty(FTM0,FTM_Ch1,(uint16)(xf));
       LPLD_FTM_PWM_ChangeDuty(FTM1,FTM_Ch1,(uint16)(yf));
 
@@ -91,30 +91,30 @@ void renew()
 {
 
   //¼ÆËã
-  if(y>35&&y<45)
-  {
-    A = (float)(P * adress_err[0] 
-             + KD*D * (adress_err[0] -adress_err[1])
-             +KI*I*adress_err_all);//
-  }
-  else
+//  if(y>35&&y<45)
+//  {
+//    A = (float)(P * adress_err[0] 
+//             + KD*D * (adress_err[0] -adress_err[1])
+//             +KI*I*adress_err_all);//
+//  }
+//  else
     A=(float)(P * adress_err[0] 
-             + D * (adress_err[0] -adress_err[1])
+             + D * (adress_err[0] -adress_err[3])
              +KI*I*adress_err_all);//
   F=A*4.222;
   
 
 
   //¼ÆËã
-  if(x>35&&x<45)
-  {
-    A2 = (float)(P2 * adress_err2[0] 
-               + KD2*D2 * (adress_err2[0] -adress_err2[1])
-               +KI2*I2*adress_err_all2);//
-  }
-  else
+//  if(x>35&&x<45)
+//  {
+//    A2 = (float)(P2 * adress_err2[0] 
+//               + KD2*D2 * (adress_err2[0] -adress_err2[1])
+//               +KI2*I2*adress_err_all2);//
+//  }
+//  else
      A2 = (float)(P2 * adress_err2[0] 
-               + D2 * (adress_err2[0] -adress_err2[1])
+               + D2 * (adress_err2[0] -adress_err2[3])
                +KI2*I2*adress_err_all2);//
   F2=A2*4.222;
 
